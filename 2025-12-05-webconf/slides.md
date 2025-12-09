@@ -155,7 +155,7 @@ transition: fade-out
 # SSR 框架的意義
 
 ## SPA 的特性
-- 基於 Node.js 與 NPM 的開發環境，前端程式碼高度模組化
+- 基於 NPM 生態系的開發環境，前端程式碼高度模組化
 - 不依賴 JSP、CSHTML 等後端模板，統一使用框架的模板語言
 - 只有 1 支 HTML，網頁內容由 JS 程式碼注入
 - 程式碼打包後會將 CSS、JS 等資源序列化分割 (chunks)，減少畫面載入時間
