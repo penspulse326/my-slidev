@@ -158,11 +158,12 @@ transition: fade-out
 - 基於 Node.js 與 NPM 的開發環境，前端程式碼高度模組化
 - 不依賴 JSP、CSHTML 等後端模板，統一使用框架的模板語言
 - 只有 1 支 HTML，網頁內容由 JS 程式碼注入
+- 程式碼打包後會將 CSS、JS 等資源序列化分割 (chunks)，減少畫面載入時間
 
 ## SSR 解決什麼問題
 
-- 解決 SPA 動態注入網頁內容，而無法產生完整網站結構與 sitemap（透過預渲染產生完整 HTML 檔）
-- 利用函式 / 元件快速客製化 Meta Data
+- 解決 SPA 因動態注入網頁內容，而無法產生完整網站結構與 sitemap（透過預渲染產生完整 HTML 檔）的問題
+- 利用函式 / 元件快速客製化 SEO Schema 與 Meta Data
 - 很多好用的 config 可以一鍵處理打包、壓縮、CDN、Server 等 SEO 或維運設定
 - 可以使用 Serverless，不需要全時運行的伺服器
 
@@ -172,17 +173,17 @@ transition: fade-out
 
 # SSR 框架的意義
 
-技術選型永遠是一體兩面的，有優點當然就會有缺點
+技術選型永遠是一體兩面的，有優勢當然就要承擔一點代價
 
 ### 技術門檻
 - 需要對系統設計有一定程度了解，框架語法本身不是重點
-- SSG/SSR/Client 的分層的分層做得不好可能更花錢、使用體驗更差
+- SSG/SSR/Client 的分層的分層做得不好可能更花錢、使用體驗不增反減
 
 --
 
 ### 維運成本
 - 有 SSR 的需求就要配置一個 Node.js Runtime 運行它，需要準備一個伺服器、容器或應用程式來跑
-- 安全性更新很頻繁，基本上每個月都要更，更新後就壞了那是你家的事，沒寫測試也是你家的事 T_T
+- 安全性更新很頻繁，基本上每個月都要更，更新後就壞了那是你家的事 T_T
 
 ---
 class: text-center
@@ -227,7 +228,8 @@ transition: fade-out
 
 <img src="./images/meme_manga.png" class="w-100"/>
 
-拒絕當埋頭苦幹的松鼠隊友
+拒絕當埋頭苦幹的松鼠隊友<br/>
+專注解決當下問題，事後再 emo
 </div>
 </div>
 
@@ -255,6 +257,12 @@ transition: fade-out
   :enter="{ y: 0, opacity: 1, transition: { duration: 300 } }"
   v-click=2
 ><del>以上沒有在本次合作中講過</del></div>
+<div
+  v-motion
+  :initial="{ y: 30, opacity: 0 }"
+  :enter="{ y: 0, opacity: 1, transition: { duration: 300 } }"
+  v-click=3
+>文案排列、動畫效果、資訊架構等等，感覺怪怪的地方都值得討論</div>
 </div>
 
 ---
